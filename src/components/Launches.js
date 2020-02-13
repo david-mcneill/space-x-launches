@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Launch from './Launch';
+import SingleLaunch from './SingleLaunch';
 import styled from 'styled-components';
 
-class Latest extends Component {
+class Launches extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,8 @@ class Latest extends Component {
   }
 
   componentDidMount() {
-    const url = "https://api.spacexdata.com/v3/launches/latest";
+    const launchType = this.props.type;
+    const url = `https://api.spacexdata.com/v3/launches/${launchType}`;
 
     fetch(url)
       .then((response) => {
@@ -37,15 +38,17 @@ class Latest extends Component {
     const { launch, error, errorMessage } = this.state;
     return (
       <div>
-        {!error &&
-          <Launch launch={launch} />
-        }
+        {!error ? (
+          <SingleLaunch launch={launch} />
+        ) : (
+          <Error>There was an error: {errorMessage}</Error>
+        )}
       </div>
     )
   }
 }
 
-export default Latest;
+export default Launches;
 
 export const Error = styled.p`
   color: red;
