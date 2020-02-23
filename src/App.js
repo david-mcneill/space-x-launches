@@ -12,19 +12,21 @@ function App() {
       <main role="main">
         <L.OuterWrapper>
           <div>
-            <section style={{ marginBottom: 48, paddingBottom: 48, borderBottom: '1px solid #E3E3E3' }}>
-              <div>
+            <L.LaunchSection>
+              <div className="launch-section-header">
                 <h2>Latest Launch</h2>
               </div>
+              
               <Launches type="latest" />
-            </section>
+            </L.LaunchSection>
 
-            <section>
-              <div>
-                <h2>Next Launch</h2>
+            <L.LaunchSection>
+              <div className="launch-section-header">
+                <h2>Upcoming Launch</h2>
               </div>
+
               <Launches type="next" />
-            </section>
+            </L.LaunchSection>
           </div>
         </L.OuterWrapper>
       </main>

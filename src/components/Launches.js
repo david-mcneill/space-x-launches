@@ -6,6 +6,7 @@ class Launches extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       launch: {},
       error: false,
       errorMessage: ""
@@ -22,9 +23,9 @@ class Launches extends Component {
       })
       .then((data) => {
         this.setState({
+          loading: false,
           launch: data
         });
-        console.log(data);
       })
       .catch((error) => {
         this.setState({
@@ -35,13 +36,21 @@ class Launches extends Component {
   }
 
   render() {
-    const { launch, error, errorMessage } = this.state;
+    const { loading, launch, error, errorMessage } = this.state;
     return (
       <div>
         {!error ? (
-          <SingleLaunch launch={launch} />
+          <div>
+            {!loading ?
+              <SingleLaunch launch={launch} />
+              :
+              <Loading>Loading Data. Please wait...</Loading>
+            }
+          </div>
         ) : (
-          <Error>There was an error: {errorMessage}</Error>
+          <div>
+            <Error>There was an error: <strong>{errorMessage}</strong></Error>
+          </div>
         )}
       </div>
     )
@@ -52,4 +61,8 @@ export default Launches;
 
 export const Error = styled.p`
   color: red;
+`
+
+export const Loading = styled.p`
+  font-size: 18px;
 `
