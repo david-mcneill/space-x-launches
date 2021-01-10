@@ -15,7 +15,7 @@ class Launches extends Component {
 
   componentDidMount() {
     const launchType = this.props.type;
-    const url = `https://api.spacexdata.com/v3/launches/${launchType}`;
+    const url = `https://api.spacexdata.com/v4/launches/${launchType}`;
 
     fetch(url)
       .then((response) => {

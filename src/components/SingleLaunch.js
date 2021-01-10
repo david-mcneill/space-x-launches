@@ -23,21 +23,13 @@ const SingleLaunch = ({ launch, rocket }) => {
           </li>
 
           <li>
-            <span><strong>Mission Name:</strong> {launch.mission_name}</span>
+            <span><strong>Mission Name:</strong> {launch.name}</span>
           </li>
 
           <li>
-            <span><strong>Date:</strong> {moment(launch.launch_date_utc).format('DD/MM/YYYY')}</span>
+            <span><strong>Date:</strong> {moment(launch.date_utc).format('DD/MM/YYYY')}</span>
           </li>
-
-          <li>
-            <span><strong>Rocket:</strong> {launch.rocket.rocket_name}</span>
-          </li>
-
-          <li>
-            <span><strong>Launch Site:</strong> {launch.launch_site.site_name_long}</span>
-          </li>
-
+          
           <li>
             {launch.links.video_link !== null &&
               <span><strong>Mission Description: </strong> {launch.details}</span>
