@@ -2,14 +2,15 @@ import React from "react";
 import moment from 'moment';
 import styled from 'styled-components';
 
+import Rocket from './Rocket';
 import { Button } from '../styles/buttons';
 
-const SingleLaunch = ({ launch, rocket }) => {
+const SingleLaunch = ({ launch }) => {
   return (
     <LaunchContainer>
       <LaunchPatch>
-        {launch.links.mission_patch ?
-          <img src={launch.links.mission_patch} alt="" width="200px" />
+        {launch.links.patch ?
+          <img src={launch.links.patch.small} alt="" width="200px" />
           :
           <p style={{ textAlign: "center" }}>No patch assigned yet</p>
         }
@@ -31,15 +32,15 @@ const SingleLaunch = ({ launch, rocket }) => {
           </li>
           
           <li>
-            {launch.links.video_link !== null &&
+            {launch.links.details !== null &&
               <span><strong>Mission Description: </strong> {launch.details}</span>
             }
           </li>
         </ul>
 
         <LaunchVideoLink>
-          {launch.links.video_link !== null &&
-            <Button href={launch.links.video_link} target="_blank" rel="noopener noreferrer">Watch the Launch</Button>
+          {launch.links.youtube_id !== null &&
+            <Button href={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`} target="_blank" rel="noopener noreferrer">Watch the Launch</Button>
           }
         </LaunchVideoLink>
       </LaunchDetails>

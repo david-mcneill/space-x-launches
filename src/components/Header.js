@@ -47,7 +47,8 @@ export const HeaderLogo = styled.div`
 `
 
 export const HeaderTitle = styled.h1`
-  font-family: 'Inter Bold', Helvetica, sans-serif;
-  font-size: 28px;
+  font-family: 'Inter Light', Helvetica, sans-serif;
+  font-size: 36px;
+  text-transform: uppercase;
   color: #e3e3e3;
 `
