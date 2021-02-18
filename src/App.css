@@ -35,10 +35,11 @@ html, body {
 
 body {
   font-family: 'Inter Regular', Helvetica, sans-serif;
-  background-color: #FAFAF9;
+  background-color: #272B33;
   color: #272B33;
 }
 
 main {
   padding: 50px 0;
+  background-color: #fafaf9;
 }

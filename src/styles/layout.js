@@ -12,7 +12,6 @@ export const OuterWrapper = styled.div`
 export const LaunchSection = styled.section`
   margin-bottom: 48px;
   padding-bottom: 48px;
-  border-bottom: 1px solid #E3E3E3;
 
   .launch-section-header {
     background-color: ${colors.dark};
@@ -22,6 +21,8 @@ export const LaunchSection = styled.section`
       margin: 0;
       color: ${colors.light};
       font-size: 1.125em;
+      font-weight: 300;
+      text-transform: uppercase;
     }
   }
 `

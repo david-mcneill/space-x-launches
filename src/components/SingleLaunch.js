@@ -2,7 +2,6 @@ import React from "react";
 import moment from 'moment';
 import styled from 'styled-components';
 
-import Rocket from './Rocket';
 import { Button } from '../styles/buttons';
 
 const SingleLaunch = ({ launch }) => {
