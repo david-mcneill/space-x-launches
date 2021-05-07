@@ -31,15 +31,15 @@ const SingleLaunch = ({ launch }) => {
           </li>
           
           <li>
-            {launch.links.details !== null &&
+            {launch.details &&
               <span><strong>Mission Description: </strong> {launch.details}</span>
             }
           </li>
         </ul>
 
         <LaunchVideoLink>
-          {launch.links.youtube_id !== null &&
-            <Button href={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`} target="_blank" rel="noopener noreferrer">Watch the Launch</Button>
+          {launch.links.webcast !== null &&
+            <Button href={launch.links.webcast} target="_blank" rel="noopener noreferrer">Watch the Launch</Button>
           }
         </LaunchVideoLink>
       </LaunchDetails>
